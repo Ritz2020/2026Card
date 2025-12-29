@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一张小小的贺卡</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    }
+    video {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+    }
+    .hint {
+      position: fixed;
+      bottom: 16px;
+      right: 18px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.35);
+      padding: 6px 10px;
+      border-radius: 12px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="cardVideo"
+         autoplay
+         muted
+         playsinline
+         controls>
+    <source src="card-2026NY.mp4" type="video/mp4">
+    Your browser does not support video playback.
+  </video>
+
+  <div class="hint">🔊 Tap the video to enable sound</div>
+
+  <script>
+    const video = document.getElementById('cardVideo');
+    video.addEventListener('click', () => {
+      video.muted = false;
+    });
+  </script>
+
+</body>
+</html>
